@@ -3,12 +3,12 @@ return {
 	"AlphaTechnolog/pywal.nvim",
 	as = "pywal",
 	colorscheme = "pywal",
-	-- config = function() vim.cmd.colorscheme("pywal") end
+	config = function() vim.cmd.colorscheme("pywal") end
     },
     {
 	"folke/tokyonight.nvim",
 	colorscheme = "tokyonight",
-	config = function() vim.cmd.colorscheme("tokyonight") end
+	-- config = function() vim.cmd.colorscheme("tokyonight") end
     },
     {
 	"nvim-telescope/telescope.nvim",
@@ -44,5 +44,11 @@ return {
     {
 	"lewis6991/gitsigns.nvim",
 	opts = {}
+    },
+    {
+	"folke/trouble.nvim",
+	keys = {
+	    { " t", ":Trouble<cr>" }
+	}
     }
 }
