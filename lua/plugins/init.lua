@@ -14,7 +14,7 @@ return {
 	"nvim-telescope/telescope.nvim",
 	cmd = "Telescope",
 	keys = {
-	    { " ff", ":Telescope find_files<cr>" }
+	    { "<leader>ff", ":Telescope find_files<cr>" }
 	},
 	dependencies = "nvim-lua/plenary.nvim"
     },
@@ -32,14 +32,7 @@ return {
 	"akinsho/toggleterm.nvim",
 	opts = {},
 	keys = {
-	    { " tt", ":ToggleTerm<cr>" }
-	}
-    },
-    {
-	"tpope/vim-fugitive",
-	cmd = "Git",
-	keys = {
-	    { " g", ":Git<cr>" }
+	    { "<leader>tt", ":ToggleTerm<cr>" }
 	}
     },
     {
@@ -49,7 +42,23 @@ return {
     {
 	"folke/trouble.nvim",
 	keys = {
-	    { " tr", ":Trouble<cr>" }
+	    { "<leader>tr", ":Trouble<cr>" }
+	}
+    },
+    {
+	"kdheepak/lazygit.nvim",
+	cmd = {
+	    "LazyGit",
+	    "LazyGitConfig",
+	    "LazyGitCurrentFile",
+	    "LazyGitFilter",
+	    "LazyGitFilterCurrentFile",
+	},
+	dependencies = {
+	    "nvim-lua/plenary.nvim",
+	},
+	keys = {
+	    { "<leader>g", ":LazyGit<cr>" }
 	}
     }
 }
