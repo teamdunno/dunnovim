@@ -32,7 +32,7 @@ return {
 	"akinsho/toggleterm.nvim",
 	opts = {},
 	keys = {
-	    { " t", ":ToggleTerm<cr>" }
+	    { " tt", ":ToggleTerm<cr>" }
 	}
     },
     {
@@ -49,7 +49,7 @@ return {
     {
 	"folke/trouble.nvim",
 	keys = {
-	    { " t", ":Trouble<cr>" }
+	    { " tr", ":Trouble<cr>" }
 	}
     }
 }
