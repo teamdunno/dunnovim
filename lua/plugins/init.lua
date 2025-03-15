@@ -6,6 +6,67 @@ return {
 	-- config = function() vim.cmd.colorscheme("pywal") end
     },
     {
+	"nvim-tree/nvim-tree.lua",
+	version = "*",
+        lazy = false,
+	dependencies = {
+	    "nvim-tree/nvim-web-devicons",
+        },
+	config = function()
+        require("nvim-tree").setup {}
+	end,
+    },
+    {
+	"johnfrankmorgan/whitespace.nvim",
+	version = '*',
+	opts = {
+	    insert_at_start = true,
+	},
+    },
+    {
+	'gelguy/wilder.nvim',
+	opts = {
+	    insert_at_start = true,
+	},
+    },
+    {
+	"folke/noice.nvim",
+	event = "VeryLazy",
+	opts = {
+	    insert_at_start = true,
+	},
+	dependencies = {
+	    "MunifTanjim/nui.nvim",
+	    "rcarriga/nvim-notify",
+        },
+	version = '*',
+    },
+    {
+	"romgrk/barbar.nvim",
+	dependencies = {
+	    'lewis6991/gitsigns.nvim', -- git status
+	    'nvim-tree/nvim-web-devicons', -- icons
+	},
+	init = function() vim.g.barbar_auto_setup = false end,
+	opts = {
+	    insert_at_start = true,
+	},
+	version = '^1.0.0',
+    },
+    {
+	'akinsho/toggleterm.nvim',
+	version = "*",
+	opts = {
+	    insert_at_start = true,
+	},
+    },
+    {
+	'VonHeikemen/searchbox.nvim',
+	dependencies = {
+	    'MunifTanjim/nui.nvim',
+	},
+    },
+    {
 	"folke/tokyonight.nvim",
 	colorscheme = "tokyonight",
 	config = function() vim.cmd.colorscheme("tokyonight") end
