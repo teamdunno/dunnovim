@@ -1,0 +1,5 @@
+-- this is for you to put your settings,
+-- and other stuff.
+--
+-- be wary: do not call lazy here!
+-- plugins go in the `plugins/` folder.
