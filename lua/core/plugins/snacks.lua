@@ -15,6 +15,7 @@ return {
         input = { enabled = true },
         notifier = { enabled = true },
         quickfile = { enabled = true },
+        picker = { enabled = true },
         dashboard = {
             enabled = true,
             sections = {
@@ -50,6 +51,9 @@ __      _____| | ___ ___  _ __ ___   ___
     },
     keys = {
         { "~",          function() Snacks.terminal() end,                    mode = "n",                   desc = "Open a terminal" },
+        { "<leader>ff", function() Snacks.picker.files() end,                desc = "Find files" },
+        { "<leader>fg", function() Snacks.picker.grep() end,                 desc = "Live grep" },
+        { "<leader>fd", function() Snacks.picker.diagnostics() end,          desc = "Diagnostics" },
         { "<leader>mz", function() Snacks.zen() end,                         mode = "n",                   desc = "Misc: Enter zen" },
         { "<leader>gb", function() Snacks.picker.git_branches() end,         desc = "Git Branches" },
         { "<leader>gl", function() Snacks.picker.git_log() end,              desc = "Git Log" },
