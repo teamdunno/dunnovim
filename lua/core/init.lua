@@ -36,4 +36,23 @@ require("lazy").setup({
     install = { colorscheme = { "habamax" } },
     -- automatically check for plugin updates
     checker = { enabled = true },
+    performance = {
+        rtp = {
+            disabled_plugins = {
+                "gzip",
+                "matchit",
+                "matchparen",
+                "netrwPlugin",
+                "tarPlugin",
+                "tohtml",
+                "tutor",
+                "zipPlugin",
+                "editorconfig",
+                "man",
+                "osc52",
+                "rplugin",
+                "spellfile",
+            },
+        },
+    },
 })
