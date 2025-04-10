@@ -1,11 +1,7 @@
 return {
-    "m4xshen/autoclose.nvim",
-    version = "*",
+    'windwp/nvim-autopairs',
     event = "InsertEnter",
-    opts = {
-	insert_at_start = true,
-	options = {
-	    disabled_filetypes = { "text", "markdown" }
-	},
-    },
+    config = {}
+    -- use opts = {} for passing setup options
+    -- this is equivalent to setup({}) function
 }
