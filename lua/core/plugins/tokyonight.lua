@@ -5,5 +5,5 @@ return {
     config = function()
         vim.o.termguicolors = true
         vim.cmd([[colorscheme tokyonight]])
-    end
+    end,
 }

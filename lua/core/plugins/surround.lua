@@ -6,5 +6,5 @@ return {
         "ds",
         "cs",
     },
-    opts = {}
+    opts = {},
 }
