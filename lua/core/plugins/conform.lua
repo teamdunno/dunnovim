@@ -1,16 +1,26 @@
 return {
-    'stevearc/conform.nvim',
-    event = "BufWritePre",
-    opts = {
-        formatters_by_ft = {
-            lua = { "stylua" },
-            python = { "isort", "ruff" },
-            rust = { "rustfmt", lsp_format = "fallback" },
-            javascript = { "prettierd", "prettier", stop_after_first = true }
+    {
+        "stevearc/conform.nvim",
+        event = "BufWritePre",
+        opts = {
+            formatters_by_ft = {
+                lua = { "stylua" },
+                python = { "isort", "ruff" },
+                rust = { "rustfmt", lsp_format = "fallback" },
+                javascript = { "prettierd", "prettier", stop_after_first = true },
+                json = { "jq" },
+                yaml = { "yamlfmt" },
+            },
+            format_on_save = {
+                timeout_ms = 1000,
+                lsp_format = "fallback",
+            },
         },
-        format_on_save = {
-            timeout_ms = 1000,
-            lsp_format = "fallback"
-        }
+    },
+    {
+        "zapling/mason-conform.nvim",
+        dependencies = { "williamboman/mason.nvim", "stevearc/conform.nvim" },
+        event = "BufWritePre",
+        opts = {},
     },
 }
