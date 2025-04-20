@@ -32,7 +32,7 @@ return {
         config = function()
             local lspconfig = require("lspconfig")
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "rust_analyzer" },
+                ensure_installed = { "lua_ls", "rust_analyzer", "pyright", "ruff" },
             })
             require("mason-lspconfig").setup_handlers({
                 function(server_name)
