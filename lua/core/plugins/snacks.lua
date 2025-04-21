@@ -49,7 +49,6 @@ __      _____| | ___ ___  _ __ ___   ___
         statuscolumn = { enabled = true },
         terminal = { enabled = true },
         zen = { enabled = true },
-        lazygit = { enabled = true },
     },
     keys = {
         {
@@ -144,13 +143,6 @@ __      _____| | ___ ___  _ __ ___   ___
                 Snacks.picker.git_log_file()
             end,
             desc = "Git Log File",
-        },
-        {
-            "<leader>gg",
-            function()
-                Snacks.lazygit.open()
-            end,
-            desc = "Open LazyGit",
         },
         {
             "gd",
