@@ -7,6 +7,7 @@ M.ui = {
 M.extras = {
     "lang.lua",
     "editor.searchbox",
+    "cosmetic.noice",
 }
 
 return M
