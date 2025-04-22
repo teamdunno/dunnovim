@@ -54,7 +54,14 @@ __      _____| | ___ ___  _ __ ___   ___
         {
             "~",
             function()
-                Snacks.terminal.open("powershell")
+                local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
+                local shell = vim.o.shell
+
+                if is_windows then
+                    shell = "powershell"
+                end
+
+                Snacks.terminal.open(shell)
             end,
             mode = "n",
             desc = "Open a terminal",
