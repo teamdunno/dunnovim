@@ -7,7 +7,7 @@ return {
 
     {
         "neovim/nvim-lspconfig",
-        ft = "rs",
+        ft = "rust",
         opts = {
             servers = {
                 rust_analyzer = {},
@@ -18,6 +18,7 @@ return {
 
     {
         "stevearc/conform.nvim",
+        ft = "rust",
         opts = function(_, opts)
             opts.formatters_by_ft = opts.formatters_by_ft or {}
             table.insert(opts.formatters_by_ft, {
