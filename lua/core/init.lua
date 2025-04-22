@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     if vim.v.shell_error ~= 0 then
         vim.api.nvim_echo({
             { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out,                            "WarningMsg" },
+            { out, "WarningMsg" },
             { "\nPress any key to exit..." },
         }, true, {})
         vim.fn.getchar()
@@ -24,16 +24,34 @@ vim.g.maplocalleader = "\\"
 require("core.vimsettings")
 require("custom")
 
+local settings = {
+    ui = {
+        theme = "tokyonight",
+    },
+    extras = {},
+}
+
+local user_settings = require("custom.settings")
+
+settings = vim.tbl_extend("force", settings, user_settings)
+
+local spec = {
+    -- import your plugins
+    { import = "core.plugins" },
+    { import = "custom.plugins" },
+}
+
+for i, v in ipairs(settings.extras) do
+    local path = "core.plugins.extras." .. v
+    table.insert(spec, { import = path })
+end
+
 -- Setup lazy.nvim
 require("lazy").setup({
-    spec = {
-        -- import your plugins
-        { import = "core.plugins" },
-        { import = "custom.plugins" },
-    },
+    spec = spec,
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
-    install = { colorscheme = { "habamax" } },
+    install = { colorscheme = { settings.ui.theme, "habamax" } },
     -- automatically check for plugin updates
     checker = { enabled = true },
     performance = {
@@ -56,3 +74,5 @@ require("lazy").setup({
         },
     },
 })
+
+vim.cmd.colorscheme(settings.ui.theme)

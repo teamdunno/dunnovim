@@ -18,21 +18,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
 return {
     {
         "williamboman/mason.nvim",
-        event = { "BufReadPre", "BufNewFile" },
         cmd = "Mason",
         opts = {},
     },
     {
         "neovim/nvim-lspconfig",
-        event = { "BufReadPre", "BufNewFile" },
+        lazy = true,
         dependencies = {
             "mason.nvim",
             { "williamboman/mason-lspconfig.nvim", config = function() end },
         },
         opts = {
-            servers = {
-                lua_ls = {},
-            },
+            servers = {},
         },
         config = function(_, opts)
             -- diagnostics signs
