@@ -1,25 +1,29 @@
 return {
     {
+        "saecki/crates.nvim",
+        event = { "BufRead Cargo.toml" },
+        opts = {},
+    },
+
+    {
         "neovim/nvim-lspconfig",
-        ft = "python",
+        ft = "rust",
         opts = {
             servers = {
-                pyright = {},
-                ruff = {}
+                rust_analyzer = {},
             },
         },
     },
 
-
     {
         "stevearc/conform.nvim",
-        ft = "python",
+        ft = "rust",
         opts = function(_, opts)
             opts.formatters_by_ft = opts.formatters_by_ft or {}
             table.insert(opts.formatters_by_ft, {
-                python = { "ruff" }
+                rust = { "rustfmt", "rust_analyzer" },
             })
             return opts
-        end
-    }
+        end,
+    },
 }

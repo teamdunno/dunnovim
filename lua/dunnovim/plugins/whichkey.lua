@@ -10,9 +10,9 @@ return {
                 { "<leader>f", group = "find/files" },
                 { "<leader>g", group = "git" },
                 { "<leader>m", group = "miscallaneous" },
-                { "<leader>t", group = "trouble/tree" }
-            }
-        }
+                { "<leader>t", group = "trouble/tree" },
+            },
+        },
     },
     keys = {
         "<leader>",

@@ -1,7 +1,10 @@
--- note(teesh):
---
--- you shouldn't be here!
--- the file you are probably looking for is:
--- `./lua/core/init.lua`
+vim.api.nvim_echo({
+    {
+        "Do not use this repository directly\n",
+        "ErrorMsg",
+    },
+    { "Press any key to exit", "MoreMsg" },
+}, true, {})
 
-require("core")
+vim.fn.getchar()
+vim.cmd([[quit]])

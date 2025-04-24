@@ -1,30 +1,30 @@
 return {
     {
-        "saecki/crates.nvim",
-        event = { "BufRead Cargo.toml" },
-        opts = {},
-    },
-
-    {
         "neovim/nvim-lspconfig",
-        ft = "rust",
+        ft = "lua",
         opts = {
             servers = {
-                rust_analyzer = {},
+                lua_ls = {},
             },
         },
     },
-
-
+    {
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {
+            library = {
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+        },
+    },
     {
         "stevearc/conform.nvim",
-        ft = "rust",
         opts = function(_, opts)
             opts.formatters_by_ft = opts.formatters_by_ft or {}
             table.insert(opts.formatters_by_ft, {
-                rust = { "rustfmt", "rust_analyzer" }
+                lua = { "stylua" },
             })
             return opts
-        end
-    }
+        end,
+    },
 }

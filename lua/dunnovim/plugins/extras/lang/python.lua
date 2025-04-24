@@ -1,30 +1,24 @@
 return {
     {
         "neovim/nvim-lspconfig",
-        ft = "lua",
+        ft = "python",
         opts = {
             servers = {
-                lua_ls = {},
+                pyright = {},
+                ruff = {},
             },
         },
     },
-    {
-        "folke/lazydev.nvim",
-        ft = "lua",
-        opts = {
-            library = {
-                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-            },
-        },
-    },
+
     {
         "stevearc/conform.nvim",
+        ft = "python",
         opts = function(_, opts)
             opts.formatters_by_ft = opts.formatters_by_ft or {}
             table.insert(opts.formatters_by_ft, {
-                lua = { "stylua" }
+                python = { "ruff" },
             })
             return opts
-        end
-    }
+        end,
+    },
 }
