@@ -13,7 +13,7 @@ return {
             end, { desc = "Go to buffer " .. i })
         end
     end,
-    event = "VeryLazy",
+    event = { "BufAdd" },
     keys = (function()
         local keys = {
             { "<Tab>", "<cmd>bnext<cr>", desc = "Next buffer" },

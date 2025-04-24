@@ -1,13 +1,6 @@
-local settings = {
-    ui = {
-        theme = "tokyonight",
-    },
-    extras = {},
-}
+require("dunnovim.utils")
 
-local user_settings = require("custom.settings")
-
-settings = vim.tbl_extend("force", settings, user_settings)
+local settings = DunnoVim.config.get_config()
 
 local spec = {}
 

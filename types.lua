@@ -1,0 +1,12 @@
+---@meta
+---
+---@class dunnovim.Settings
+---@field ui dunnovim.UISettings UI Settings
+---@field extras string[] Extras to apply
+---
+---@class dunnovim.UISettings
+---@field lualine dunnovim.LualineSettings
+---@field theme string The theme to set
+---
+---@class dunnovim.LualineSettings
+---@field override table

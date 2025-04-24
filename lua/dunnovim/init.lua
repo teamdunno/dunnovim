@@ -1,34 +1,31 @@
 local M = {}
 
+---@param settings dunnovim.Settings The user's settings
 function M.postsetup(settings)
     vim.cmd.colorscheme(settings.ui.theme)
 
-    require("lualine").setup({
+    local lualine_config = {
         sections = {
             lualine_a = { "mode" },
             lualine_b = { "branch", "diff" },
-            lualine_c = { "filename" }, -- Use truncated progress
+            lualine_c = { "filename" },
             lualine_x = { "encoding", "filetype" },
             lualine_y = { "progress" },
             lualine_z = { "location" },
         },
-    })
+    }
+
+    lualine_config = vim.tbl_extend("keep", lualine_config, settings.ui.lualine.override)
+
+    require("lualine").setup(lualine_config)
 end
 
 function M.setup(opt)
     require("dunnovim.vimsettings")
+    require("dunnovim.utils")
     require("custom")
 
-    local settings = {
-        ui = {
-            theme = "tokyonight",
-        },
-        extras = {},
-    }
-
-    local user_settings = require("custom.settings")
-
-    settings = vim.tbl_extend("force", settings, user_settings)
+    local settings = DunnoVim.config.get_config()
 
     vim.api.nvim_create_autocmd("User", {
         pattern = "VeryLazy",
