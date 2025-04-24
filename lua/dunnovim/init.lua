@@ -15,7 +15,7 @@ function M.postsetup(settings)
         },
     }
 
-    lualine_config = vim.tbl_extend("keep", lualine_config, settings.ui.lualine.override)
+    lualine_config = vim.tbl_deep_extend("keep", lualine_config, settings.ui.lualine.override)
 
     require("lualine").setup(lualine_config)
 end
