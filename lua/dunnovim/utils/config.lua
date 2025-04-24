@@ -8,7 +8,7 @@ M.settings = {
         theme = "tokyonight",
         ---@type dunnovim.LualineSettings
         lualine = {
-            override = {}
+            override = {},
         },
     },
     extras = {},

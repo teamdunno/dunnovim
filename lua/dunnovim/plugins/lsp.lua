@@ -65,6 +65,10 @@ return {
                     return
                 end
 
+                if server_opts.setup ~= nil then
+                    server_opts.setup(server)
+                end
+
                 require("lspconfig")[server].setup(server_opts)
             end
 

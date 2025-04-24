@@ -9,5 +9,4 @@ return {
         end,
     },
     { "folke/tokyonight.nvim", enabled = false },
-
 }
