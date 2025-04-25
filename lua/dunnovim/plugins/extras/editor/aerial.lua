@@ -33,6 +33,6 @@ return {
                     return vim.bo.filetype == "aerial"
                 end,
             })
-        end
-    }
+        end,
+    },
 }

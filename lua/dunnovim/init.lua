@@ -1,4 +1,5 @@
 local M = {}
+require("dunnovim.utils")
 
 ---@param settings dunnovim.Settings The user's settings
 function M.postsetup(settings)
@@ -22,7 +23,6 @@ end
 
 function M.setup(opt)
     require("dunnovim.vimsettings")
-    require("dunnovim.utils")
     require("custom")
 
     local settings = DunnoVim.config.get_config()

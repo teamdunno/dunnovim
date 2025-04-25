@@ -2,6 +2,7 @@ return {
     {
         "folke/noice.nvim",
         event = "VeryLazy",
+        priority = 1000,
         opts = {},
         dependencies = {
             "MunifTanjim/nui.nvim",

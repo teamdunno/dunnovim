@@ -1,5 +1,6 @@
 ---@class dunnovim.util
 ---@field config dunnovim.util.config
+---@field plugins dunnovim.util.plugins
 local M = {}
 
 ---@type dunnovim.util

@@ -3,5 +3,5 @@ return {
     event = "VeryLazy",
     opts = function(_, opts)
         return opts
-    end
+    end,
 }

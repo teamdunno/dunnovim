@@ -34,8 +34,7 @@ return {
             { ",v", "<cmd>VenvSelect<cr>" },
         },
         ---@type venv-selector.Config
-        opts = {
-        },
-        cond = vim.loop.os_uname().sysname ~= "Windows_NT"
+        opts = {},
+        cond = vim.loop.os_uname().sysname ~= "Windows_NT",
     },
 }

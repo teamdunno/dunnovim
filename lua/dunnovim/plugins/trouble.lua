@@ -4,7 +4,7 @@ return {
         opts = {},
         cmd = "Trouble",
         keys = {
-            { "<leader>td", "<cmd>Trouble diagnostics toggle<cr>",         desc = "Show Diagnostics (trouble)" },
+            { "<leader>td", "<cmd>Trouble diagnostics toggle<cr>", desc = "Show Diagnostics (trouble)" },
             {
                 "<leader>tD",
                 "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",

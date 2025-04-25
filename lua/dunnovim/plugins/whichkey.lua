@@ -1,9 +1,7 @@
 return {
     "folke/which-key.nvim",
+    event = "VeryLazy", -- Lazy-load on UI init
     opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
         preset = "helix",
         spec = {
             {
@@ -13,14 +11,5 @@ return {
                 { "<leader>t", group = "trouble/tree" },
             },
         },
-    },
-    keys = {
-        "<leader>",
-        "g",
-        "d",
-        "v",
-        "c",
-        "z",
-        "=",
     },
 }
