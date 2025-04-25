@@ -91,4 +91,19 @@ return {
             chat.setup(opts)
         end,
     },
+
+    {
+        "folke/edgy.nvim",
+        optional = true,
+        opts = function(_, opts)
+            opts = opts or {}
+            opts.right = opts.right or {}
+            table.insert(opts.right, {
+                ft = "copilot-chat",
+                title = "Copilot Chat",
+                size = { width = 50 },
+            })
+            return opts
+        end,
+    },
 }

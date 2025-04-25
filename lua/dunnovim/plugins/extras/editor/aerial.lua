@@ -18,4 +18,21 @@ return {
             "nvim-lua/plenary.nvim",
         },
     },
+
+    {
+        "folke/edgy.nvim",
+        optional = true,
+        opts = function(_, opts)
+            opts = opts or {}
+            opts.left = opts.left or {}
+            table.insert(opts.left, {
+                ft = "aerial",
+                title = "Outline",
+                size = { width = 40 },
+                open = function()
+                    return vim.bo.filetype == "aerial"
+                end,
+            })
+        end
+    }
 }
