@@ -6,6 +6,7 @@ return {
     },
     cmd = "Neogit",
     keys = {
+        { "<leader>g", "", desc = "git" },
         { "<leader>gg", "<cmd>Neogit<cr>", desc = "Open Neogit" },
     },
 }

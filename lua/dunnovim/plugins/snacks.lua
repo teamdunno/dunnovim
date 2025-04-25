@@ -51,6 +51,9 @@ __      _____| | ___ ___  _ __ ___   ___
         zen = { enabled = true },
     },
     keys = {
+        { "<leader>f", "", desc = "find/files" },
+        { "<leader>m", "", desc = "miscallaneous" },
+        { "<leader>t", "", desc = "trouble/tree" },
         {
             "~",
             function()
