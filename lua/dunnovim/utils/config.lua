@@ -6,10 +6,6 @@ M.settings = {
     ---@type dunnovim.UISettings
     ui = {
         theme = "tokyonight",
-        ---@type dunnovim.LualineSettings
-        lualine = {
-            override = {},
-        },
     },
     extras = {},
 }

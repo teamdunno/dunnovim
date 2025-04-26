@@ -5,20 +5,15 @@ require("dunnovim.utils")
 function M.postsetup(settings)
     vim.cmd.colorscheme(settings.ui.theme)
 
-    local lualine_config = {
-        sections = {
-            lualine_a = { "mode" },
-            lualine_b = { "branch", "diff" },
-            lualine_c = { "filename" },
-            lualine_x = { "encoding", "filetype" },
-            lualine_y = { "progress" },
-            lualine_z = { "location" },
-        },
-    }
+    if DunnoVim.plugins.has("lualine.nvim") then
+        local lualine_config = DunnoVim.plugins.opts("lualine.nvim")
+        require("lualine").setup(lualine_config)
+    end
 
-    lualine_config = vim.tbl_deep_extend("keep", lualine_config, settings.ui.lualine.override)
-
-    require("lualine").setup(lualine_config)
+    if DunnoVim.plugins.has("mini.statusline") then
+        local mini_statusline_config = DunnoVim.plugins.opts("mini.statusline")
+        require("mini.statusline").setup(mini_statusline_config)
+    end
 end
 
 function M.setup(opt)

@@ -7,6 +7,3 @@
 ---@class dunnovim.UISettings
 ---@field lualine dunnovim.LualineSettings
 ---@field theme string The theme to set
----
----@class dunnovim.LualineSettings
----@field override table
