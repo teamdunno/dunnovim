@@ -28,4 +28,9 @@ function M.get_config()
     return M.settings
 end
 
+function M.colorscheme()
+    local config = M.get_config()
+    return config.ui.theme
+end
+
 return M

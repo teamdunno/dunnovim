@@ -8,5 +8,5 @@ return {
             vim.o.termguicolors = true
         end,
     },
-    { "folke/tokyonight.nvim", enabled = false },
+    { "folke/tokyonight.nvim", enabled = DunnoVim.config.colorscheme() == "tokyonight" },
 }
