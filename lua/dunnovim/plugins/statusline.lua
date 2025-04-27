@@ -1,7 +1,5 @@
 return {
     "nvim-lualine/lualine.nvim",
-    lazy = true,
-    priority = 1000,
     opts = {
         sections = {
             lualine_a = { "mode" },
@@ -11,5 +9,5 @@ return {
             lualine_y = { "progress" },
             lualine_z = { "location" },
         },
-    }
+    },
 }

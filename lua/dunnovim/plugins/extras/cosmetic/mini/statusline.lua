@@ -1,8 +1,7 @@
-return { {
-    "echasnovski/mini.statusline",
-    lazy = true,
-    opts = {}
-},
-    { "nvim-lualine/lualine.nvim", enabled = false }
-
+return {
+    {
+        "echasnovski/mini.statusline",
+        opts = {},
+    },
+    { "nvim-lualine/lualine.nvim", enabled = false },
 }
