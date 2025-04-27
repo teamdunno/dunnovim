@@ -15,9 +15,7 @@ return {
         ft = "python",
         opts = function(_, opts)
             opts.formatters_by_ft = opts.formatters_by_ft or {}
-            table.insert(opts.formatters_by_ft, {
-                python = { "ruff" },
-            })
+            opts.formatters_by_ft.python = { "ruff" }
             return opts
         end,
     },
@@ -26,7 +24,6 @@ return {
         "linux-cultist/venv-selector.nvim",
         dependencies = {
             "neovim/nvim-lspconfig",
-            -- { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
         },
         branch = "regexp", -- This is the regexp branch, use this for the new versions
         ft = "python",
