@@ -1,5 +1,6 @@
 return {
     "nvim-lualine/lualine.nvim",
+    lazy = true,
     opts = {
         sections = {
             lualine_a = { "mode" },
