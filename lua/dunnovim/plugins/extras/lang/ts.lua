@@ -19,4 +19,14 @@ return {
             return opts
         end,
     },
+
+    {
+        "nvim-treesitter/nvim-treesitter",
+        opts = {
+            parsers = {
+                typescript = {},
+                tsx = {},
+            },
+        },
+    },
 }

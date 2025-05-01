@@ -34,4 +34,13 @@ return {
         opts = {},
         cond = vim.loop.os_uname().sysname ~= "Windows_NT",
     },
+
+    {
+        "nvim-treesitter/nvim-treesitter",
+        opts = {
+            parsers = {
+                python = {},
+            },
+        },
+    },
 }

@@ -3,11 +3,20 @@ return {
         "nvim-treesitter/nvim-treesitter",
         event = { "BufReadPost", "BufNewFile" },
         build = ":TSUpdate",
-        config = function()
+        lazy = true,
+        opts = {
+            parsers = {},
+        },
+        config = function(_, opts)
+            local ensure_installed = {}
+
+            for lang, opts in pairs(opts.parsers) do
+                table.insert(ensure_installed, lang)
+            end
+
             require("nvim-treesitter.configs").setup({
-                ensure_installed = { "lua", "rust", "python", "javascript" }, -- Specify desired language_version
+                ensure_installed = ensure_installed,
                 highlight = { enable = true },
-                indent = { enable = true },
             })
         end,
     },
