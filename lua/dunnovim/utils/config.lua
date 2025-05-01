@@ -6,6 +6,9 @@ M.settings = {
     ---@type dunnovim.UISettings
     ui = {
         theme = "tokyonight",
+        lsp = {
+            inlay_hints = true,
+        },
     },
     extras = {},
 }

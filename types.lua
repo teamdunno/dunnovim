@@ -4,6 +4,9 @@
 ---@field ui dunnovim.UISettings UI Settings
 ---@field extras string[] Extras to apply
 ---
+---@class dunnovim.UILSPSettings
+---@field inlay_hints boolean Inlay hints
+---
 ---@class dunnovim.UISettings
----@field lualine dunnovim.LualineSettings
 ---@field theme string The theme to set
+---@field lsp dunnovim.UILSPSettings UI LSP settings

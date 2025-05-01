@@ -12,6 +12,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
         vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
         vim.keymap.set("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+
+        if DunnoVim.config.get_config().ui.lsp.inlay_hints then
+            vim.lsp.inlay_hint.enable()
+        end
     end,
 })
 
@@ -140,7 +144,7 @@ return {
                 },
                 mapping = cmp.mapping.preset.insert({
                     ["<CR>"] = cmp.mapping.confirm({ select = true }),
-                    ["<C-Space>"] = cmp.mapping.complete(),
+                    ["<C-c>"] = cmp.mapping.complete(),
                     ["<C-e>"] = cmp.mapping.abort(),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
