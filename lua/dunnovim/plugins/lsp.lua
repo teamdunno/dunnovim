@@ -114,7 +114,13 @@ return {
         dependencies = {
             "rafamadriz/friendly-snippets",
         },
-        build = "make install_jsregexp",
+        build = function()
+            if not vim.fn.has("windows") then
+                return "make install_jsregexp"
+            end
+
+            return ""
+        end,
         config = function()
             require("luasnip.loaders.from_vscode").lazy_load()
         end,
