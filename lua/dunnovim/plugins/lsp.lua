@@ -36,7 +36,6 @@ return {
             servers = {},
         },
         config = function(_, opts)
-            -- diagnostics signs
             if vim.fn.has("nvim-0.10.0") == 0 then
                 if type(opts.diagnostics.signs) ~= "boolean" then
                     for severity, icon in pairs(opts.diagnostics.signs.text) do
@@ -135,11 +134,17 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "L3MON4D3/LuaSnip",
         },
-        config = function()
+        opts = {
+            sources = {
+                luasnip = {},
+                nvim_lsp = {},
+            },
+        },
+        config = function(_, opts)
             local cmp = require("cmp")
             local luasnip = require("luasnip")
 
-            cmp.setup({
+            local actual_opts = {
                 snippet = {
                     expand = function(args)
                         luasnip.lsp_expand(args.body)
@@ -173,11 +178,18 @@ return {
                         end
                     end, { "i", "s" }),
                 }),
-                sources = {
-                    { name = "nvim_lsp" },
-                    { name = "luasnip" },
-                },
-            })
+                sources = {},
+            }
+
+            for name, other in pairs(opts.sources) do
+                local source = { name = name }
+                for k, v in pairs(other) do
+                    source[k] = v
+                end
+                table.insert(actual_opts.sources, source)
+            end
+
+            cmp.setup(actual_opts)
         end,
     },
 }
