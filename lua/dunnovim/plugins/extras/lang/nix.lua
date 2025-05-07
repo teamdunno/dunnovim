@@ -5,7 +5,6 @@ return {
         opts = {
             servers = {
                 rnix = {}, -- legacy, use only if nixd is not suitable
-                nixd = {}, -- recommended modern LSP
             },
         },
     },
