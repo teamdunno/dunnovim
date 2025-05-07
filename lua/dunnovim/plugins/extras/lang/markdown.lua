@@ -12,6 +12,17 @@ return {
         },
         ft = "markdown",
     },
+
+    {
+        "neovim/nvim-lspconfig",
+        ft = "markdown",
+        opts = {
+            servers = {
+                marksman = {},
+            },
+        },
+    },
+
     {
         "stevearc/conform.nvim",
         ft = "markdown",
