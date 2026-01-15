@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 return {
     {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         cmd = "Mason",
         opts = {},
     },
@@ -30,7 +30,7 @@ return {
         lazy = true,
         dependencies = {
             "mason.nvim",
-            { "williamboman/mason-lspconfig.nvim", config = function() end },
+            { "mason-org/mason-lspconfig.nvim", config = function() end },
         },
         opts = {
             servers = {},
