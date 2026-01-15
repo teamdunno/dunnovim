@@ -7,6 +7,7 @@ return {
         opts = {
             parsers = {},
         },
+        branch = "master",
         config = function(_, opts)
             local ensure_installed = {}
 
